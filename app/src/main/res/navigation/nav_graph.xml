@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.lsegura.proyectoadat.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_modifyNoteFragment"
+            app:destination="@id/modifyNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.lsegura.proyectoadat.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_modifyNoteFragment"
+            app:destination="@id/modifyNoteFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.lsegura.proyectoadat.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_modifyUserFragment"
+            app:destination="@id/modifyUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifyNoteFragment"
+        android:name="com.lsegura.proyectoadat.ModifyNoteFragment"
+        android:label="fragment_modify_note"
+        tools:layout="@layout/fragment_modify_note" >
+        <action
+            android:id="@+id/action_modifyNoteFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifyUserFragment"
+        android:name="com.lsegura.proyectoadat.ModifyUserFragment"
+        android:label="fragment_modify_user"
+        tools:layout="@layout/fragment_modify_user" />
+</navigation>
